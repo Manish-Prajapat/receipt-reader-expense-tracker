@@ -3,8 +3,10 @@ import cv2
 import numpy as np
 import pytesseract
 import re
+import os  # 👈 Make sure this is up here!
 from PIL import Image
 
+# Now Python will know what 'os' is when it hits this line:
 if os.name == 'nt':  # 'nt' means Windows
     pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
