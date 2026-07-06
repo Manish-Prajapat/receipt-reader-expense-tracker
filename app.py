@@ -5,8 +5,8 @@ import pytesseract
 import re
 from PIL import Image
 
-# --- CONFIGURATION FOR WINDOWS USERS ---
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+if os.name == 'nt':  # 'nt' means Windows
+    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 def extract_total_amount(text):
     """Hunts for monetary values in the text and guesses the total."""
